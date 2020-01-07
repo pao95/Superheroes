@@ -1,0 +1,23 @@
+<div class="container m-5">
+
+    <h1>{{heroe.nombre}}<small>{{heroe.aparicion}}</small></h1>
+
+    <div class="row row-cols-2">
+        <div class="col">
+            <img [src]="heroe.img" [alt]="heroe.img">
+            <br><br>
+            <a [routerLink]="['/heroes']"> Regresar..</a>
+        </div>
+        <div class="col">
+            <h3>{{heroe.nombre}}</h3>
+            <hr>
+            <p>{{heroe.bio}}</p>
+            <img class="asd" *ngIf="heroe.casa == 'DC'; else marvel" src="./assets/img/dc.jpg" alt="">
+            <ng-template #marvel>
+                <img #marvel class="asd" src="./assets/img/marvel.jpg" alt="">
+
+            </ng-template>
+        </div>
+
+    </div>
+</div>
