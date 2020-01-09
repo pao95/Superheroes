@@ -88,8 +88,6 @@ return heroeArr;
 
      }
 
-
-
 }
 
 export interface Heroe {

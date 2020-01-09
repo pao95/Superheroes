@@ -1,0 +1,27 @@
+<h1>Resultados <small>de busqueda</small></h1>
+<hr>
+<div class="alert alert-warning" *ngIf="resultadosArr.length == 0" role="alert">
+    <h2 class="lead">No se encuentran resultados!</h2>
+</div>
+
+<div class="card-columns">
+
+
+
+
+
+
+    <div class="card" *ngFor="let item of resultadosArr, let i = index">
+
+
+        <img [src]="item.img" class="card-img-top" [alt]="item.nombre">
+        <div class="card-body">
+            <h5 class="card-title"> {{item.nombre}}</h5>
+            <p class="card-text">{{item.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{item.aparicion}}</small></p>
+            <button type="button" class="btn btn-outline-primary btn-block" (click)="verMas(i)">Ver mas...</button>
+            <!-- <a [routerLink]="['/heroe',i]" class = "btn btn-outline-primary"> Ver mas</a> -->
+
+        </div>
+    </div>
+</div>
